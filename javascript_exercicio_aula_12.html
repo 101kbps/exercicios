@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Média</title>
+   
+</head>
+<body>
+    
+    <h1> Bem vinde! Vamos calcular sua média!</h1>
+    <button onclick="media()">Calcular média</button>
+
+<h2 id="situacao"></h2>
+<p id="media"></p>
+
+<script type="text/javascript">
+function media() {
+  var nota1 = parseFloat(prompt("Por favor insira sua primeira nota", "0"));
+  var nota2 = parseFloat(prompt("Por favor insira sua segunda nota", "0"));
+  var media = ( nota1 + nota2 )/ 2 ;
+
+  if (media >= 6) {
+    document.getElementById("situacao").style.color = "blue";
+    document.getElementById("situacao").innerHTML = "APROVADO";
+    document.getElementById("media").innerHTML =
+    "Parabens! Você foi aprovado com média " +  media ;
+  }
+  
+  else {
+    document.getElementById("situacao").style.color = "red";
+    document.getElementById("situacao").innerHTML= "REPROVADO";
+    document.getElementById("media").innerHTML =
+    "Me desculpe, você foi reprovado com média "+ media ;
+  }
+}
+</script>
+   
+  </body>
+  </html>
+        
+       
