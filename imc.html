@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu IMC</title>
+</head>
+<body>
+    <h1>Cálculo de IMC</h1>
+    <h2>IMC:
+        <span id="imc_final"></span>
+    </h2> 
+    <h2>Grupo de risco<br>
+     Seu grupo de risco é :
+        <span id="grupo"></span>
+    </h2>
+    
+    <button onclick="imc()">Calcule seu IMC</button>
+
+    <script type="text/javascript">
+        function imc() {
+            var altura = parseFloat(prompt("Por favor insira sua altura:", "0"));
+            var peso = parseFloat(prompt("Por favor insira seu peso:", "0"));
+            var imc = peso/(altura * altura) ;
+           
+            if (imc >= 40) {
+            var imc_final = imc
+            var cor = "red"
+            var grupo = "Obesidade III";
+  }
+  
+            else if (imc >=35) {
+            var imc_final = imc
+            var cor = "orange"
+            var grupo = "Obesidade II" ;
+  }  
+
+            else if (imc >=30) {
+            var imc_final = imc
+            var cor = "yellow"
+            var grupo = "Obesidade I" ;
+  }
+            else if (imc >=25) {
+            var imc_final = imc
+            var cor = "light_green"
+            var grupo = "Sobrepeso";
+}
+
+            else if (imc >=20) {
+            var imc_final = imc
+            var cor = "green"
+            var grupo = "Normal";
+
+}
+            else {
+            var imc_final = imc
+            var cor = "blue"
+            var grupo = "Abaixo do peso";
+}
+
+        document.getElementById("imc_final").innerHTML= imc;
+        document.getElementById("grupo").innerHTML= grupo;
+        document.getElementById("grupo").style.color = cor
+        }
+</script>
+ 
+    
+</body>
+</html>
